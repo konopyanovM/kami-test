@@ -2,8 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Page from './components/Page'
-import { PagesEnum } from './pages'
-import Products from './pages/products'
+import { PagesEnum } from './enums'
+import Products from './pages/Products'
 
 function App() {
   return (
