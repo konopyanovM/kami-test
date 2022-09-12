@@ -3,13 +3,14 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Page from './components/Page'
 import { PagesEnum } from './pages'
+import Products from './pages/products'
 
 function App() {
   return (
     <div className='App'>
       <Page>
         <Routes>
-          <Route path={PagesEnum.products}></Route>
+          <Route path={PagesEnum.products} element={<Products />}></Route>
         </Routes>
       </Page>
     </div>
