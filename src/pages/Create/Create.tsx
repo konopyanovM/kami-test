@@ -3,7 +3,7 @@ import './Create.css'
 
 interface CreateProps {}
 
-const Create: FC<CreateProps> = ({}) => {
+const Create: FC<CreateProps> = () => {
   return <div className='create'></div>
 }
 

@@ -5,6 +5,7 @@ import images from '../../data/index'
 import { PagesEnum, PRODUCT_ITEMS_PER_PAGE } from '../../constants'
 import ReactPaginate from 'react-paginate'
 import { Link } from 'react-router-dom'
+import HorizontalRule from '../../components/HorizontalRule'
 
 interface ProductsProps {}
 
@@ -51,7 +52,9 @@ const Products: FC<ProductsProps> = () => {
         <div className='products-header'>
           <Link to={PagesEnum.PRODUCTS_CREATE}>Create</Link>
         </div>
+        <HorizontalRule margin={20} />
         <div className='products__list'>{currentItems}</div>
+        <HorizontalRule margin={20} />
         <ReactPaginate
           className='products-pagination'
           onPageChange={handlePageClick}
