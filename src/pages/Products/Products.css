@@ -4,3 +4,26 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.products-pagination {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.products-pagination > li {
+  box-sizing: border-box;
+  border-radius: 40%;
+  line-height: 50%;
+  background-color: var(--gray-2);
+  cursor: pointer;
+}
+
+.products-pagination > li.selected {
+  border: 1px solid var(--gray-1);
+}
+
+.products-pagination > li a {
+  padding: 0.5rem;
+  display: inline-block;
+}

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { defaultCurrency } from '../../constants'
+import { DEFAULT_CURRENCY } from '../../constants'
 import './ProductCard.css'
 import { ProductCardProps } from './types'
 
@@ -17,7 +17,7 @@ const ProductCard: FC<ProductCardProps> = ({
         <img src={src} alt={alt} className='product-card__image' />
         <p className='product-card__title'>{title}</p>
         <p className='product-card__status'>{status}</p>
-        <p className='product-card__price'>{`${price} ${defaultCurrency}`}</p>
+        <p className='product-card__price'>{`${price} ${DEFAULT_CURRENCY}`}</p>
       </div>
     </div>
   )

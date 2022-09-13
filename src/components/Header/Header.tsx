@@ -5,7 +5,7 @@ import './Header.css'
 
 interface HeaderProps {}
 
-const Header: FC<HeaderProps> = ({}) => {
+const Header: FC<HeaderProps> = () => {
   return (
     <header className='header'>
       <Link to={PagesEnum.PRODUCTS}>Products</Link>
