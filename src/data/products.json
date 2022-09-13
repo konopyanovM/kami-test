@@ -1,0 +1,100 @@
+[
+  {
+  "src": "1",
+  "alt": "",
+  "title": "Товар 1",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "2",
+  "alt": "",
+  "title": "Товар 2",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "3",
+  "alt": "",
+  "title": "Товар 3",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "4",
+  "alt": "",
+  "title": "Товар 4",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "5",
+  "alt": "",
+  "title": "Товар 5",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "6",
+  "alt": "",
+  "title": "Товар 6",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "7",
+  "alt": "",
+  "title": "Товар 7",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "8",
+  "alt": "",
+  "title": "Товар 8",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "9",
+  "alt": "",
+  "title": "Товар 9",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "10",
+  "alt": "",
+  "title": "Товар 10",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "11",
+  "alt": "",
+  "title": "Товар 11",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "12",
+  "alt": "",
+  "title": "Товар 12",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "13",
+  "alt": "",
+  "title": "Товар 13",
+  "status": true,
+  "price": 3000
+},
+{
+  "src": "14",
+  "alt": "",
+  "title": "Товар 14",
+  "status": true,
+  "price": 3000
+}
+]

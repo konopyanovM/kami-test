@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { PagesEnum } from '../../enums'
+import { PagesEnum } from '../../constants/enums'
 import './Header.css'
 
 interface HeaderProps {}
@@ -8,7 +8,7 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = ({}) => {
   return (
     <header className='header'>
-      <Link to={PagesEnum.products}>Products</Link>
+      <Link to={PagesEnum.PRODUCTS}>Products</Link>
     </header>
   )
 }
