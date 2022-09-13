@@ -2,8 +2,9 @@ import { FC, useEffect, useState } from 'react'
 import ProductCard from '../../components/ProductCard'
 import './Products.css'
 import images from '../../data/index'
-import { PRODUCT_ITEMS_PER_PAGE } from '../../constants'
+import { PagesEnum, PRODUCT_ITEMS_PER_PAGE } from '../../constants'
 import ReactPaginate from 'react-paginate'
+import { Link } from 'react-router-dom'
 
 interface ProductsProps {}
 
@@ -46,15 +47,20 @@ const Products: FC<ProductsProps> = () => {
 
   return (
     <div className='products'>
-      <div className='products__wrapper'>{currentItems}</div>
-      <ReactPaginate
-        className='products-pagination'
-        onPageChange={handlePageClick}
-        breakLabel='...'
-        nextLabel='next >'
-        previousLabel='< previous'
-        pageCount={pageCount}
-      />
+      <div className='products__wrapper'>
+        <div className='products-header'>
+          <Link to={PagesEnum.PRODUCTS_CREATE}>Create</Link>
+        </div>
+        <div className='products__list'>{currentItems}</div>
+        <ReactPaginate
+          className='products-pagination'
+          onPageChange={handlePageClick}
+          breakLabel='...'
+          nextLabel='next >'
+          previousLabel='< previous'
+          pageCount={pageCount}
+        />
+      </div>
     </div>
   )
 }

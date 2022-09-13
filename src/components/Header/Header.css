@@ -1,0 +1,11 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--gray-2);
+}
+
+.header__wrapper {
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+}

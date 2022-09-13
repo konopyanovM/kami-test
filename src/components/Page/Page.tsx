@@ -8,11 +8,11 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ children }) => {
   return (
-    <>
+    <div className='page'>
       <Header></Header>
-      <main>{children}</main>
+      <main className='page-main'>{children}</main>
       <footer></footer>
-    </>
+    </div>
   )
 }
 

@@ -8,7 +8,10 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = () => {
   return (
     <header className='header'>
-      <Link to={PagesEnum.PRODUCTS}>Products</Link>
+      <div className='header__wrapper'>
+        <Link to={PagesEnum.MAIN}>Main</Link>
+        <Link to={PagesEnum.PRODUCTS}>Products</Link>
+      </div>
     </header>
   )
 }

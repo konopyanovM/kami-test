@@ -1,0 +1,11 @@
+.main,
+.main__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.main__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
