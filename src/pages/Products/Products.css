@@ -1,5 +1,5 @@
 .products {
-  height: fill-available;
+  height: stretch;
 }
 
 .products__wrapper {

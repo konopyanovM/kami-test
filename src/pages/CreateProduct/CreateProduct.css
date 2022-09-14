@@ -1,0 +1,18 @@
+.create-product {
+  height: 100%;
+}
+
+.create-product__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-product__form {
+  max-width: 500px;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
