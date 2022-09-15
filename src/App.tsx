@@ -6,8 +6,14 @@ import { PagesEnum } from './constants/enums'
 import CreateProduct from './pages/CreateProduct'
 import Main from './pages/Main'
 import Products from './pages/Products'
+import { setItem } from './utils'
+
+const loadLocalStorage = () => {}
 
 function App() {
+  const productList = require('./data/products.json')
+  setItem('productList', productList)
+
   const CREATE_PRODUCT_PATH = `${PagesEnum.PRODUCTS}${PagesEnum.CREATE}`
 
   return (

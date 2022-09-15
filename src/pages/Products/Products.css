@@ -11,6 +11,7 @@
 
 .products-header {
   display: flex;
+  justify-content: space-between;
 }
 
 .products__list {

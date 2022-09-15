@@ -2,127 +2,183 @@
   {
     "id": 1,
   "src": "1",
-  "alt": "",
   "description": "",
-  "title": "Товар 1",
+  "title": "Фотоаппарат",
   "status": true,
-  "price": 3000
+  "priceBy": "almaty",
+  "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 2,
   "src": "2",
-  "alt": "",
   "description": "",
-  "title": "Товар 2",
+  "title": "Чайник",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 3,
   "src": "3",
-  "alt": "",
   "description": "",
-  "title": "Товар 3",
+  "title": "Телефон",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 4,
   "src": "4",
-  "alt": "",
   "description": "",
-  "title": "Товар 4",
+  "title": "Мороженое",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 5,
   "src": "5",
-  "alt": "",
   "description": "",
-  "title": "Товар 5",
+  "title": "Шприц для машин",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 6,
   "src": "6",
-  "alt": "",
   "description": "",
-  "title": "Товар 6",
+  "title": "Помада",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 7,
   "src": "7",
-  "alt": "",
   "description": "",
-  "title": "Товар 7",
+  "title": "Часы",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 8,
   "src": "8",
-  "alt": "",
   "description": "",
-  "title": "Товар 8",
+  "title": "Арахисовое масло",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 9,
   "src": "9",
-  "alt": "",
   "description": "",
-  "title": "Товар 9",
+  "title": "Синий фломастер",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 10,
   "src": "10",
-  "alt": "",
   "description": "",
-  "title": "Товар 10",
+  "title": "Розовый мел",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 11,
   "src": "11",
-  "alt": "",
   "description": "",
-  "title": "Товар 11",
+  "title": "Лепестки",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 12,
   "src": "12",
-  "alt": "",
   "description": "",
-  "title": "Товар 12",
+  "title": "Армейская граната",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 13,
   "src": "13",
-  "alt": "",
   "description": "",
-  "title": "Товар 13",
+  "title": "Светлое будущее",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 },
 {
   "id": 14,
   "src": "14",
-  "alt": "",
   "description": "",
-  "title": "Товар 14",
+  "title": "Человек который любит жизнь",
   "status": true,
-  "price": 3000
+  "priceBy": "base",
+    "price": {
+    "base": 3000,
+    "almaty": 1500,
+    "astana": 2000
+  }
 }
 ]
