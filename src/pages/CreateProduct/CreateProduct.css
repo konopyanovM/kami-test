@@ -23,6 +23,9 @@
   border-radius: 0.5rem;
   flex-grow: 1;
 }
+.create-product__input.checkbox {
+  flex-grow: 0;
+}
 .create-product__label {
   width: 100%;
   display: flex;

@@ -6,5 +6,6 @@ export interface ProductCardProps {
   title: string
   isActive: boolean
   price: string | number
+  handlerUpdate: MouseEventHandler<HTMLParagraphElement>
   handlerDelete: MouseEventHandler<HTMLParagraphElement>
 }

@@ -11,14 +11,14 @@ import {
 import ReactPaginate from 'react-paginate'
 import { Link, useLocation } from 'react-router-dom'
 import HorizontalRule from '../../components/HorizontalRule'
-import { getItem, searchFilter } from '../../utils'
+import { getItem, searchFilter, setItem } from '../../utils'
 
 interface ProductsProps {}
 
 const Products: FC<ProductsProps> = () => {
   const locationPath = useLocation().pathname
 
-  const [productList] = useState(getItem(PRODUCT_LIST))
+  const [productList, setProductList] = useState(getItem(PRODUCT_LIST))
   const [Products, setProducts] = useState<null | ReactNode[]>(null)
   const [currentItems, setCurrentItems] = useState<null | ReactNode[]>(null)
   const [pageCount, setPageCount] = useState(0)
@@ -26,7 +26,21 @@ const Products: FC<ProductsProps> = () => {
 
   const [query, setQuery] = useState('')
 
-  const handlerProductDelete = (e) => {}
+  const handlerProductUpdate = () => {
+    return () => {}
+  }
+
+  const handlerProductDelete = (index, productList, setProductList) => {
+    return () => {
+      setProductList((prev) => {
+        setItem(
+          PRODUCT_LIST,
+          prev.filter((value, i) => i !== index),
+        )
+        return prev.filter((value, i) => i !== index)
+      })
+    }
+  }
   const getProductCards = (products): ReactNode[] => {
     return products.map((product, index) => {
       const imagePlaceholder = require('../../data/imagePlaceholder.jpg')
@@ -43,7 +57,12 @@ const Products: FC<ProductsProps> = () => {
           title={product.title}
           isActive={product.status}
           price={price}
-          handlerDelete={handlerProductDelete}
+          handlerUpdate={handlerProductUpdate()}
+          handlerDelete={handlerProductDelete(
+            index,
+            productList,
+            setProductList,
+          )}
         />
       )
     })

@@ -7,11 +7,11 @@ import { ProductFieldsEnum } from './types/enums'
 
 interface CreateProductProps {}
 
-const productList = getItem('productList')
-
 const CreateProduct: FC<CreateProductProps> = () => {
   const products = require('../../data/products.json')
   const productsLength = products.length
+
+  const [productList] = useState(getItem(PRODUCT_LIST))
 
   const [id, setId] = useState(productsLength + 1)
   const [title, setTitle] = useState('title')
@@ -70,6 +70,8 @@ const CreateProduct: FC<CreateProductProps> = () => {
       status,
       prices: '',
     })
+    console.log(productList)
+
     productList.push(newProduct)
     setItem(PRODUCT_LIST, productList)
 
@@ -203,7 +205,7 @@ const CreateProduct: FC<CreateProductProps> = () => {
           <label className='create-product__label' htmlFor='status'>
             <span>{ProductFieldsEnum.STATUS}</span>
             <input
-              className='create-product__input'
+              className='create-product__input checkbox'
               id='status'
               type='checkbox'
               name={ProductFieldsEnum.STATUS}
@@ -213,7 +215,7 @@ const CreateProduct: FC<CreateProductProps> = () => {
           <label className='create-product__label' htmlFor='priceBy'>
             <span>One price for all cities</span>
             <input
-              className='create-product__input'
+              className='create-product__input checkbox'
               id='priceBy'
               type='checkbox'
               checked={priceStatus}
