@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
-import { PRODUCT_LIST } from '../../constants'
+import HorizontalRule from '../../components/HorizontalRule'
+import { CITIES, CurrencyEnum, PRODUCT_LIST } from '../../constants'
 import { getItem, setItem } from '../../utils'
 import './CreateProduct.css'
 import { ProductFieldsEnum } from './types/enums'
@@ -15,9 +16,12 @@ const CreateProduct: FC<CreateProductProps> = () => {
   const [id, setId] = useState(productsLength + 1)
   const [title, setTitle] = useState('title')
   const [description, setDescription] = useState('description')
-  const [image, setImage] = useState<Blob[] | MediaSource[] | null>(null)
-  const [status, setStatus] = useState('status')
-  const [price, setPrice] = useState('price')
+  const [imageFiles, setImageFiles] = useState<Blob[] | MediaSource[] | null>(
+    null,
+  )
+  const [status, setStatus] = useState<boolean>(true)
+  const [priceStatus, setPriceStatus] = useState<boolean>(true)
+  const [cities, setCities] = useState(CITIES)
 
   const [Images, setImages] = useState<ReactNode[] | null>(null)
 
@@ -30,15 +34,30 @@ const CreateProduct: FC<CreateProductProps> = () => {
         setDescription(e.target.value)
         break
       case ProductFieldsEnum.IMAGE:
-        setImage(e.target.files!)
+        setImageFiles(e.target.files!)
         break
       case ProductFieldsEnum.STATUS:
-        setStatus(e.target.value)
+        setStatus(!status)
         break
-      case ProductFieldsEnum.PRICE:
-        setPrice(e.target.value)
+      case ProductFieldsEnum.PRICE_STATUS:
+        setPriceStatus(!priceStatus)
         break
     }
+  }
+
+  const handleOnChangeCityPrice = (e) => {
+    setCities((prev) => {
+      const cityIndex = prev.findIndex((city) => {
+        return city.id === e.target.id
+      })
+      const newCityUpdate = {
+        name: e.target.name,
+        id: e.target.id,
+        price: e.target.value,
+      }
+      prev[cityIndex] = newCityUpdate
+      return prev
+    })
   }
 
   const handleOnSubmit = (e) => {
@@ -46,9 +65,10 @@ const CreateProduct: FC<CreateProductProps> = () => {
 
     const newProduct = createProduct({
       id,
+      images: imageFiles,
       title,
       status,
-      price,
+      prices: '',
     })
     productList.push(newProduct)
     setItem(PRODUCT_LIST, productList)
@@ -61,31 +81,42 @@ const CreateProduct: FC<CreateProductProps> = () => {
   const createProduct = ({
     id,
     src = id,
+    images = {},
     description = '',
     title,
     status,
-    priceBy = 'base',
-    price,
-  }) => {
+  }: any) => {
+    let priceBy = ''
+    let basePrice = cities[0].price
+    if (priceStatus === true) {
+      priceBy = 'base'
+    }
+
+    const cityPrices = {}
+    cities.forEach((city) => {
+      cityPrices[city.id] = city.price ? city.price : basePrice
+    })
+
     return {
       id,
       src,
+      images,
       description,
       title,
       status,
+      price: cityPrices,
       priceBy,
-      price,
     }
   }
 
   useEffect(() => {
     const ImageComponents: ReactNode[] = []
-    if (image)
-      for (let i = 0; i < image.length; i++) {
+    if (imageFiles)
+      for (let i = 0; i < imageFiles.length; i++) {
         ImageComponents.push(
           <img
             key={i}
-            src={URL.createObjectURL(image[i])}
+            src={URL.createObjectURL(imageFiles[i])}
             alt=''
             className={
               i === 0 ? 'create-product__image-main' : 'create-product__image'
@@ -94,7 +125,35 @@ const CreateProduct: FC<CreateProductProps> = () => {
         )
       }
     setImages(ImageComponents)
-  }, [image])
+  }, [imageFiles])
+
+  const getCityPriceInputs = (cities) => {
+    const CityComponents = cities.map((city, index) => {
+      if (city.id !== 'base')
+        return (
+          <label
+            key={index}
+            className='create-product__label'
+            htmlFor={city.id}
+          >
+            <span>{city.name}</span>
+            <input
+              className='create-product__input'
+              id={city.id}
+              type='number'
+              name={city.name}
+              onChange={handleOnChangeCityPrice}
+              disabled={priceStatus}
+            />
+            <p className='create-product__symbol'>{CurrencyEnum.KZ}</p>
+          </label>
+        )
+      return null
+    })
+    return CityComponents
+  }
+
+  const cityInputs = getCityPriceInputs(cities)
 
   return (
     <div className='create-product'>
@@ -138,10 +197,9 @@ const CreateProduct: FC<CreateProductProps> = () => {
               onChange={handleOnChange}
             />
           </label>
-          {image && (
+          {imageFiles && (
             <div className='create-product__image-container'>{Images}</div>
           )}
-
           <label className='create-product__label' htmlFor='status'>
             <span>{ProductFieldsEnum.STATUS}</span>
             <input
@@ -149,7 +207,6 @@ const CreateProduct: FC<CreateProductProps> = () => {
               id='status'
               type='checkbox'
               name={ProductFieldsEnum.STATUS}
-              value={status}
               onChange={handleOnChange}
             />
           </label>
@@ -159,11 +216,23 @@ const CreateProduct: FC<CreateProductProps> = () => {
               className='create-product__input'
               id='priceBy'
               type='checkbox'
-              name={ProductFieldsEnum.PRICE}
-              value={price}
+              checked={priceStatus}
+              name={ProductFieldsEnum.PRICE_STATUS}
               onChange={handleOnChange}
             />
           </label>
+          <label className='create-product__label' htmlFor='base'>
+            <input
+              className='create-product__input'
+              id='base'
+              type='number'
+              name='BasePrice'
+              onChange={handleOnChangeCityPrice}
+            />
+            <p className='create-product__symbol'>{CurrencyEnum.KZ}</p>
+          </label>
+          <HorizontalRule></HorizontalRule>
+          <div className='create-product__cities'>{cityInputs}</div>
           <input className='create-product__button' type='submit' />
         </form>
       </div>

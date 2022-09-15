@@ -8,3 +8,12 @@
   width: inherit;
   height: inherit;
 }
+
+.button {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--gray-1);
+  border-radius: 5px;
+  cursor: pointer;
+}

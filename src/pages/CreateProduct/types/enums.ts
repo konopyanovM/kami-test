@@ -3,5 +3,6 @@ export enum ProductFieldsEnum {
   DESCRIPTION = 'Description',
   IMAGE = 'Image',
   STATUS = 'Status',
-  PRICE = 'Price',
+  PRICE_STATUS = 'PriceStatus',
+  BASE_PRICE = 'BasePrice',
 }

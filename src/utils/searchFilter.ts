@@ -6,5 +6,6 @@ export const searchFilter = (array, query) => {
     if (product?.title.toLowerCase().includes(query.toLowerCase())) {
       return product
     }
+    return null
   })
 }

@@ -18,15 +18,26 @@
 }
 
 .create-product__input {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   font-size: 18px;
   border-radius: 0.5rem;
+  flex-grow: 1;
 }
 .create-product__label {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 18px;
+}
+
+.create-product__label > span {
+  margin-right: 1rem;
+}
+
+.create-product__symbol {
+  padding: 0.3rem 0.7rem;
+  font-size: 22px;
 }
 
 .create-product__button {
@@ -45,7 +56,7 @@
 }
 
 .create-product__image-container img {
-  max-width: fill;
+  max-width: stretch;
 }
 
 .create-product__image-main {
@@ -53,4 +64,14 @@
   grid-row: 1 / 3;
   align-self: baseline;
   border: 5px solid rgba(36, 152, 36, 0.5);
+}
+
+.create-product__cities {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.create-product__cities span {
+  flex-basis: 20%;
 }

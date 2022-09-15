@@ -9,6 +9,7 @@ const ProductCard: FC<ProductCardProps> = ({
   title,
   isActive,
   price,
+  handlerDelete,
 }) => {
   const status = isActive ? 'Активен' : 'Архивирован'
   return (
@@ -18,6 +19,9 @@ const ProductCard: FC<ProductCardProps> = ({
         <p className='product-card__title'>{title}</p>
         <p className='product-card__status'>{status}</p>
         <p className='product-card__price'>{`${price} ${DEFAULT_CURRENCY}`}</p>
+        <p className='button' onClick={handlerDelete}>
+          Delete
+        </p>
       </div>
     </div>
   )

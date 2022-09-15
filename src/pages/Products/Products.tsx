@@ -2,7 +2,12 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import ProductCard from '../../components/ProductCard'
 import './Products.css'
 import images from '../../data/index'
-import { PagesEnum, PRODUCT_ITEMS_PER_PAGE } from '../../constants'
+import {
+  DEFAULT_CITY,
+  PagesEnum,
+  PRODUCT_ITEMS_PER_PAGE,
+  PRODUCT_LIST,
+} from '../../constants'
 import ReactPaginate from 'react-paginate'
 import { Link, useLocation } from 'react-router-dom'
 import HorizontalRule from '../../components/HorizontalRule'
@@ -13,7 +18,7 @@ interface ProductsProps {}
 const Products: FC<ProductsProps> = () => {
   const locationPath = useLocation().pathname
 
-  const [productList] = useState(getItem('productList'))
+  const [productList] = useState(getItem(PRODUCT_LIST))
   const [Products, setProducts] = useState<null | ReactNode[]>(null)
   const [currentItems, setCurrentItems] = useState<null | ReactNode[]>(null)
   const [pageCount, setPageCount] = useState(0)
@@ -21,12 +26,15 @@ const Products: FC<ProductsProps> = () => {
 
   const [query, setQuery] = useState('')
 
+  const handlerProductDelete = (e) => {}
   const getProductCards = (products): ReactNode[] => {
     return products.map((product, index) => {
       const imagePlaceholder = require('../../data/imagePlaceholder.jpg')
       const image = images[product.src] || imagePlaceholder
 
-      const price = product.price[product.priceBy] || product.price.base
+      const price = product.priceBy
+        ? product.price.base
+        : product.price[DEFAULT_CITY]
 
       return (
         <ProductCard
@@ -35,6 +43,7 @@ const Products: FC<ProductsProps> = () => {
           title={product.title}
           isActive={product.status}
           price={price}
+          handlerDelete={handlerProductDelete}
         />
       )
     })
@@ -61,6 +70,7 @@ const Products: FC<ProductsProps> = () => {
 
   const handleOnSearch = (e) => {
     e.preventDefault()
+
     const filteredProducts = searchFilter(productList, query)
 
     setProducts(filteredProducts && getProductCards(filteredProducts))
