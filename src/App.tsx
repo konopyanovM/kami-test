@@ -7,6 +7,7 @@ import EditProduct from './pages/EditProduct/EditProduct'
 import Main from './pages/Main'
 import Products from './pages/Products'
 import { loadLocaleStorage } from './utils'
+import 'draft-js/dist/Draft.css'
 
 function App() {
   const productList = require('./data/products.json')

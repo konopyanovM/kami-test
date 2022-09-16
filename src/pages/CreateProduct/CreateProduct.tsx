@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import MyEditor from '../../components/Editor/Editor'
 import HorizontalRule from '../../components/HorizontalRule'
 import { CITIES, CurrencyEnum, PagesEnum, PRODUCT_LIST } from '../../constants'
 import { createProduct, getItem, setItem } from '../../utils'
