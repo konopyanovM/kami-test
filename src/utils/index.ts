@@ -1,4 +1,7 @@
 export * from './convertImage'
 export * from './searchFilter'
 export * from './localStorageAPI'
+export * from './capitalizeFirstLetter'
 export * from './loadLocaleStorage'
+export * from './createProduct'
+export * from './updateProduct'

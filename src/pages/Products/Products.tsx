@@ -16,7 +16,8 @@ import { getItem, searchFilter, setItem } from '../../utils'
 interface ProductsProps {}
 
 const Products: FC<ProductsProps> = () => {
-  const locationPath = useLocation().pathname
+  const location = useLocation()
+  const locationPath = location.pathname
 
   const [productList, setProductList] = useState(getItem(PRODUCT_LIST))
   const [Products, setProducts] = useState<null | ReactNode[]>(null)
@@ -25,10 +26,6 @@ const Products: FC<ProductsProps> = () => {
   const [itemOffset, setItemOffset] = useState(0)
 
   const [query, setQuery] = useState('')
-
-  const handlerProductUpdate = () => {
-    return () => {}
-  }
 
   const handlerProductDelete = (index, productList, setProductList) => {
     return () => {
@@ -52,12 +49,12 @@ const Products: FC<ProductsProps> = () => {
 
       return (
         <ProductCard
+          id={product.id}
           key={index}
           src={image}
           title={product.title}
           isActive={product.status}
           price={price}
-          handlerUpdate={handlerProductUpdate()}
           handlerDelete={handlerProductDelete(
             index,
             productList,
@@ -99,7 +96,9 @@ const Products: FC<ProductsProps> = () => {
     <div className='products'>
       <div className='products__wrapper'>
         <div className='products-header'>
-          <Link to={`${locationPath}${PagesEnum.CREATE}`}>Create</Link>
+          <Link to={`${locationPath}${PagesEnum.CREATE}`} className='button'>
+            Create
+          </Link>
           <form className='products-header__search' onSubmit={handleOnSearch}>
             <label htmlFor='search'>Search by name</label>
             <input
@@ -115,7 +114,9 @@ const Products: FC<ProductsProps> = () => {
           </form>
         </div>
         <HorizontalRule margin={20} />
-        <div className='products__list'>{currentItems}</div>
+        <div className='products__body'>
+          <div className='products__list'>{currentItems}</div>
+        </div>
         <HorizontalRule margin={20} />
         <ReactPaginate
           className='products-pagination'

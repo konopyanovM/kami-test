@@ -10,12 +10,14 @@
 }
 
 .button {
-  padding: 1rem;
+  padding: 0.55rem 1rem;
   display: flex;
   justify-content: center;
   border: 1px solid var(--gray-1);
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .button:hover {

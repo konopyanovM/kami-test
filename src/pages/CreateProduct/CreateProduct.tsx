@@ -1,14 +1,15 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import HorizontalRule from '../../components/HorizontalRule'
-import { CITIES, CurrencyEnum, PRODUCT_LIST } from '../../constants'
-import { getItem, setItem } from '../../utils'
+import { CITIES, CurrencyEnum, PagesEnum, PRODUCT_LIST } from '../../constants'
+import { createProduct, getItem, setItem } from '../../utils'
 import './CreateProduct.css'
 import { ProductFieldsEnum } from './types/enums'
 
 interface CreateProductProps {}
 
 const CreateProduct: FC<CreateProductProps> = () => {
-  const products = require('../../data/products.json')
+  const products = getItem(PRODUCT_LIST)
   const productsLength = products.length
 
   const [productList] = useState(getItem(PRODUCT_LIST))
@@ -24,6 +25,8 @@ const CreateProduct: FC<CreateProductProps> = () => {
   const [cities, setCities] = useState(CITIES)
 
   const [Images, setImages] = useState<ReactNode[] | null>(null)
+
+  const routerNavigate = useNavigate()
 
   const handleOnChange = (e) => {
     switch (e.target.name) {
@@ -65,12 +68,14 @@ const CreateProduct: FC<CreateProductProps> = () => {
 
     const newProduct = createProduct({
       id,
+      description,
       images: imageFiles,
       title,
       status,
       prices: '',
+      cities,
+      priceStatus,
     })
-    console.log(productList)
 
     productList.push(newProduct)
     setItem(PRODUCT_LIST, productList)
@@ -78,37 +83,7 @@ const CreateProduct: FC<CreateProductProps> = () => {
     setId((prev) => {
       return prev + 1
     })
-  }
-
-  const createProduct = ({
-    id,
-    src = id,
-    images = {},
-    description = '',
-    title,
-    status,
-  }: any) => {
-    let priceBy = ''
-    let basePrice = cities[0].price
-    if (priceStatus === true) {
-      priceBy = 'base'
-    }
-
-    const cityPrices = {}
-    cities.forEach((city) => {
-      cityPrices[city.id] = city.price ? city.price : basePrice
-    })
-
-    return {
-      id,
-      src,
-      images,
-      description,
-      title,
-      status,
-      price: cityPrices,
-      priceBy,
-    }
+    routerNavigate(PagesEnum.PRODUCTS)
   }
 
   useEffect(() => {
@@ -208,6 +183,7 @@ const CreateProduct: FC<CreateProductProps> = () => {
               className='create-product__input checkbox'
               id='status'
               type='checkbox'
+              checked={status}
               name={ProductFieldsEnum.STATUS}
               onChange={handleOnChange}
             />
@@ -236,6 +212,9 @@ const CreateProduct: FC<CreateProductProps> = () => {
           <HorizontalRule></HorizontalRule>
           <div className='create-product__cities'>{cityInputs}</div>
           <input className='create-product__button' type='submit' />
+          <Link className='button' to={PagesEnum.PRODUCTS}>
+            Cancel
+          </Link>
         </form>
       </div>
     </div>

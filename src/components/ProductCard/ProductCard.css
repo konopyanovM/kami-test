@@ -17,3 +17,24 @@
   height: 250px;
   object-fit: cover;
 }
+
+.product-card__title {
+  font-size: 20px;
+}
+
+.product-card__link {
+  text-decoration: none;
+  color: black;
+}
+
+.product-card__status {
+  font-weight: bold;
+}
+
+.Active {
+  color: green;
+}
+
+.Archive {
+  color: rgb(199, 60, 0);
+}
