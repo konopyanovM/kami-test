@@ -7,5 +7,19 @@
 .header__wrapper {
   padding: 1rem 2rem;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.header__wrapper a {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--black-1);
+}
+
+.header__wrapper a:hover {
+  color: var(--gray-1);
+  text-decoration: underline;
 }
