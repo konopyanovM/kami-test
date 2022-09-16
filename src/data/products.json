@@ -10,7 +10,9 @@
   "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -24,7 +26,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -38,7 +42,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -52,7 +58,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -66,7 +74,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -80,7 +90,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -94,7 +106,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -108,7 +122,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -122,7 +138,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -136,7 +154,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -150,7 +170,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -164,7 +186,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -178,7 +202,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+    "karagandy": 1500,
+    "oskemen": 2000
   }
 },
 {
@@ -192,7 +218,9 @@
     "price": {
     "base": 3000,
     "almaty": 1500,
-    "astana": 2000
+    "astana": 2000,
+        "karagandy": 1500,
+    "oskemen": 2000
   }
 }
 ]
